@@ -1,0 +1,14 @@
+{
+  "name": "tak25-ai-backlog",
+  "version": "1.0.0",
+  "description": "Juhitud veebirakendus kliendi idee muutmiseks kasutajalugudeks, kriteeriumideks ja mockup'ideks.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
