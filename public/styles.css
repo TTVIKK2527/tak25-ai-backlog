@@ -17,6 +17,8 @@
 * { box-sizing: border-box; }
 button, .story-title, .mockup, .price-card, p { overflow-wrap: anywhere; }
 .error { background: #fff0ee; color: var(--bad); padding: 12px; border: 1px solid #e8b0ab; }
+.request-status { color: var(--muted); padding: 0 16px; font-size: 13px; }
+.request-status:not(:empty) { padding-top: 10px; padding-bottom: 10px; }
 .roles { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .roles span { display: inline-flex; align-items: center; gap: 5px; }
 .roles button { padding: 4px 8px; }
@@ -261,6 +263,7 @@ textarea { min-height: 92px; resize: vertical; }
   min-height: 50px;
   padding: 8px;
 }
+.criterion-link { grid-column: 2 / -1; font-size: 12px; }
 .warning {
   color: var(--warn);
   font-size: 12px;

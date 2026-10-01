@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { requestAI } from '../ai.js';
 
 const project = { name: 'Raamatukogu', description: 'Raamatute laenutamine', roles: [], backlog: [], conversations: [], currentStage: 'Idee' };
-const valid = { message: 'Kes kasutab? Vali rollid.', kind: 'question', choices: ['Lugeja', 'Raamatukoguhoidja'], multi: true, roles: [], stories: [], recommendedStoryId: '', findings: [] };
+const valid = { message: 'Kes kasutab? Vali rollid.', kind: 'question', choices: ['Lugeja', 'Raamatukoguhoidja'], multi: true, roles: [], stories: [] };
 const response = value => ({ ok: true, json: async () => ({ choices: [{ message: { content: JSON.stringify(value) } }] }) });
 
 test('selected answers and manually edited backlog are sent to the real API transport', async () => {
@@ -33,6 +33,6 @@ test('quota errors are understandable and not retried immediately', async () => 
   assert.equal(calls, 1);
 });
 test('rejects design without criterion-to-mockup agreement', async () => {
-  const result = { ...valid, kind: 'design', stories: [{ title: 'Lugejana soovin näha raamatuid, et valida raamat', size: 'S', criteria: Array.from({ length: 3 }, () => ({ text: 'Raamatu nimi on nähtav.', mockupElementId: 'absent' })), openQuestions: [], mockupTitle: 'Raamatud', components: [] }] };
+  const result = { message: 'Ettepanek', choices: ['Kinnita'], kind: 'design', stories: [{ title: 'Lugejana soovin näha raamatuid, et valida raamat', size: 'S', criteria: Array.from({ length: 5 }, () => ({ text: 'Raamatu nimi on nähtav.', mockupElementId: 'absent' })), openQuestions: [], mockupTitle: 'Raamatud', components: [] }] };
   await assert.rejects(requestAI('design', project, {}, { key: 'test-only', fetchImpl: async () => response(result) }), e => e.status === 422);
 });

@@ -9,6 +9,9 @@ const app = document.querySelector("#app");
 async function api(path, options = {}) {
   state.error = '';
   const mutating = options.method && options.method !== 'GET';
+  const aiRequest = /\/(?:idea|answer|regenerate|priority|generate-design|clarify|review|new-view|chat)$/.test(path);
+  const indicator = document.querySelector('[data-request-status]');
+  if (indicator) indicator.textContent = aiRequest ? 'AI koostab ettepanekut…' : mutating ? 'Salvestamine…' : '';
   if (mutating) { state.busy = true; document.querySelectorAll('button:not(:disabled)').forEach(el => { el.disabled = true; el.dataset.busyDisabled = '1'; }); }
   try {
   const res = await fetch(path, {
@@ -20,6 +23,7 @@ async function api(path, options = {}) {
   return data;
   } finally {
     if (mutating) { state.busy = false; document.querySelectorAll('[data-busy-disabled]').forEach(el => { el.disabled = false; delete el.dataset.busyDisabled; }); }
+    if (indicator) indicator.textContent = '';
   }
 }
 
@@ -37,11 +41,12 @@ function setProject(project) {
 
 async function createProject(event) {
   event.preventDefault();
-  const form = new FormData(event.currentTarget);
+  const formElement = event.currentTarget;
+  const form = new FormData(formElement);
   const project = await api("/api/projects", { method: "POST", body: JSON.stringify({ name: form.get("name"), description: form.get("description") }) });
   state.projects.unshift(project);
   state.project = project;
-  event.currentTarget.reset();
+  formElement.reset();
   render();
 }
 
@@ -88,14 +93,17 @@ async function applyProposal() {
 }
 
 async function saveBacklog(backlog = state.project.backlog, mvpAfterOrder = state.project.mvpAfterOrder) {
-  setProject(await api(`/api/projects/${state.project.id}/backlog`, { method: "POST", body: JSON.stringify({ backlog, mvpAfterOrder }) }));
+  const revision = state.backlogRevision = (state.backlogRevision || 0) + 1;
+  state.project.backlog = structuredClone(backlog);
+  const project = await api(`/api/projects/${state.project.id}/backlog`, { method: "POST", body: JSON.stringify({ backlog, mvpAfterOrder }) });
+  if (revision === state.backlogRevision) setProject(project);
 }
 
 async function updateStatus(storyId, status) {
   try {
     setProject(await api(`/api/projects/${state.project.id}/status`, { method: "POST", body: JSON.stringify({ storyId, status }) }));
   } catch (error) {
-    alert(`${error.error}\n\n${(error.missing || []).join("\n")}`);
+    state.error = [error.error, ...(error.missing || [])].join(' '); render();
   }
 }
 
@@ -113,7 +121,7 @@ async function undo() {
   try {
     setProject(await api(`/api/projects/${state.project.id}/undo`, { method: "POST" }));
   } catch (error) {
-    alert(error.error || "Tagasivõtmine ebaõnnestus.");
+    state.error = error.error || 'Tagasivõtmine ebaõnnestus.'; render();
   }
 }
 
@@ -186,6 +194,7 @@ function renderConversation() {
   return `
     <section class="panel">
       <div class="panel-header"><h3>Juhitud vestlus</h3><button data-review>Vaata backlog üle</button></div>
+      <div class="request-status" data-request-status role="status" aria-live="polite"></div>
       <div class="panel-body chat">
         ${(state.project.conversations || []).map(renderMessage).join("")}
         ${state.project.pendingProposal ? renderProposal(state.project.pendingProposal) : ''}
@@ -414,6 +423,7 @@ function renderCriteria(storyId) {
         <textarea data-ac-text="${story.id}:${ac.id}">${escapeHtml(ac.text)}</textarea>
         <button class="icon" data-highlight="${escapeHtml(ac.mockupElementId || "")}" title="Näita mockup'is">⌖</button>
         <button class="icon" data-remove-ac="${story.id}:${ac.id}" title="Eemalda">×</button>
+        ${story.mockups?.at(-1) ? `<select class="criterion-link" data-ac-link="${story.id}:${ac.id}" aria-label="Mockup’i element"><option value="">Seos mockup’iga</option>${story.mockups.at(-1).components.map(c => `<option value="${escapeHtml(c.id)}" ${c.id === ac.mockupElementId ? 'selected' : ''}>${escapeHtml(c.text || c.id)}</option>`).join('')}</select>` : ''}
         ${warnings.length ? `<div></div><div class="warning">${warnings.map(escapeHtml).join("<br>")}</div>` : ""}
       </div>`;
   }).join("");
@@ -559,6 +569,7 @@ function bind() {
     const [storyId, criterionId] = el.dataset.acAccepted.split(':');
     items.find(s => s.id === storyId).criteria.find(ac => ac.id === criterionId).accepted = el.checked;
   })));
+  document.querySelectorAll('[data-ac-link]').forEach(el => el.addEventListener('change', () => mutateBacklog(items => { const [storyId, acId] = el.dataset.acLink.split(':'); items.find(s => s.id === storyId).criteria.find(ac => ac.id === acId).mockupElementId = el.value; })));
   document.querySelectorAll('[data-edit-size]').forEach(el => el.addEventListener('change', () => mutateBacklog(items => { items.find(s => s.id === el.dataset.editSize).size = el.value; })));
   document.querySelectorAll('[data-open-questions]').forEach(el => el.addEventListener('blur', () => mutateBacklog(items => { items.find(s => s.id === el.dataset.openQuestions).openQuestions = el.value.split('\n').map(s => s.trim()).filter(Boolean); })));
   document.querySelectorAll("[data-remove-ac]").forEach((button) => button.addEventListener("click", () => mutateBacklog((items) => {

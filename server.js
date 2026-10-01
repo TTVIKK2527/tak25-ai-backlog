@@ -181,7 +181,11 @@ async function api(req, res, pathname) {
       project.currentStage = result.kind === 'design' ? 'Kriteeriumid ja mockup' : 'Täpsustused';
     } else if (result.kind === 'grooming') {
       project.currentStage = 'Groomimine';
-      proposal = { type: 'grooming', findings: result.findings.map(f => ({ ...f, id: id('finding'), proposal: f.replacements.map(s => s.title).join(' / '), before: f.storyIds.map(target => structuredClone(project.backlog.find(s => s.id === target))), replacements: f.replacements.map((draft, i) => materialize(draft, i + 1)) })) };
+      proposal = { type: 'grooming', findings: result.findings.map(f => {
+        const before = f.storyIds.map(target => structuredClone(project.backlog.find(s => s.id === target)));
+        const history = before.flatMap(s => s.mockups);
+        return { ...f, id: id('finding'), proposal: f.replacements.map(s => s.title).join(' / '), before, replacements: f.replacements.map((draft, i) => ({ ...materialize(draft, i + 1, { ...before[0], mockups: history }), id: id('story'), origin: 'AI ettepanek' })) };
+      }) };
     }
     addConversation(project, 'ai', result.message, result.choices, proposal);
     project.updatedAt = now();
@@ -348,6 +352,7 @@ async function api(req, res, pathname) {
     snapshot(project);
     const nextBacklog = input.backlog.map((s, i) => ({ ...s, order: i + 1, projectId: project.id, ...splitConnextra(s.title) }));
     for (const s of nextBacklog) if (s.status === 'Valmis arenduseks' && !readiness(s).ready) return json(res, 409, { error: 'Lugu ei vasta valmisoleku definitsioonile.', missing: readiness(s).missing });
+    nextBacklog.forEach(s => { if (s.mockups.at(-1)) s.mockups.at(-1).criteria = structuredClone(s.criteria); });
     project.backlog = nextBacklog;
     if (!project.backlog.some(s => s.id === project.selectedStoryId)) project.selectedStoryId = project.backlog[0]?.id || null;
     project.mvpAfterOrder = input.mvpAfterOrder ?? project.mvpAfterOrder;
