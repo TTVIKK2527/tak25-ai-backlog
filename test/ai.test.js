@@ -24,6 +24,11 @@ test('invalid output retries then reports failure', async () => {
   await assert.rejects(requestAI('idea', project, {}, { key: 'test-only', fetchImpl: async () => { calls++; return response({ kind: 'question' }); } }), e => e.status === 422);
   assert.equal(calls, 2);
 });
+test('repeated confirmed role questions are rejected and retried', async () => {
+  let calls = 0;
+  await assert.rejects(requestAI('answer', { ...project, roles: ['Lugeja'], questionCount: 1 }, { key: 'roles', values: ['Lugeja'] }, { key: 'test-only', fetchImpl: async () => { calls++; return response(valid); } }), e => e.status === 422);
+  assert.equal(calls, 2);
+});
 test('missing key does not use a fake fallback', async () => {
   await assert.rejects(requestAI('idea', project, {}, { key: '' }), e => e.status === 503);
 });

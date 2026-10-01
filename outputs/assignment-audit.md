@@ -29,7 +29,8 @@ Projektide loend, püsiv backlog ja vestlus, Connextra osad, suurus, staatus, p�
 - Päris Groq võtmega: rolliküsimus, makseküsimus, vähemalt viis eestikeelset põhitöövoo lugu ja valitud lugude lisamine. Need algussammud kontrolliti enne hilisemat jätkukontrolli.
 - Päris Groq jätkukontroll: põhjendatud prioriteet, viis kriteeriumi ja mockup, ühe kriteeriumi tagasilükkamine, ühe muutmine, käibemaksu täpsustus, muutuste isoleerimine, liiga suure loo jagamine, DoR tõke ja uuesti avamine. Tulemused: `live-verification.md`.
 - Päris Groq uue-vaate kontroll: uus tunnus, lugu koos kriteeriumide/mockup’iga ja valitud loo säilimine.
-- Kaheksa automaattesti: AI transpordi ja vigaste vastuste kontroll, kriteeriumide kontroll ning võtmeta käsitsi töövoog koos serveri taaskäivitamisega.
+- Üheksa automaattesti: AI transpordi ja vigaste vastuste kontroll, korduva rolliküsimuse tõrje, kriteeriumide kontroll ning võtmeta käsitsi töövoog koos serveri taaskäivitamisega.
+- Päris Groq: semantiline ühendamine, subjektiivne kriteerium, puuduvad kriteeriumid, puuduv mockup ja vigane pealkiri. Kõik viis kontrolli läbisid; tulemused: `grooming-verification.md`.
 - Brauseris: projekti loomine, käsitsi loo lisamine, ajaloolise mockup’i kuvamine ning 390 px mobiilivaade ilma horisontaalse ülejooksuta.
 
 ## Piirangud ja esitamine
@@ -38,5 +39,5 @@ Projektide loend, püsiv backlog ja vestlus, Connextra osad, suurus, staatus, p�
 - AI võib endiselt pakkuda kohmakaid sõnastusi või sisuliselt liiga üldiseid kriteeriume. Skeemi ja elemendiviite kontroll ei tõesta visuaalset/sisulist sobivust; kliendi ülevaatus jääb vajalikuks.
 - Tasuta Groq tokenilimiiti tabati päris testides. Lühikese cooldown’i korral tehakse üks automaatne kordus; muidu kuvatakse arusaadav viga. Grooming esitab korraga ühe olulisema leiu.
 - Testimine oli API-põhine koos sihitud brauserikontrolliga, mitte kõigi õpetaja sammude üks katkematu brauserisalvestus.
-- Kohalik Git-repositoorium ja tegelikud commit’id on loodud. Kaughoidlasse esitamine ning 5–10 minuti demonstratsiooni läbiviimine jäävad esitajale; kava: `demo-guide.md`.
+- Git-repositoorium koos sisuliste commit’idega esitatakse GitHubi kontole TTVIKK2527. Salajane `.env` ja projektiandmed on välistatud; `.env.example` sisaldab tühja võtme välja. 5–10 minuti demonstratsiooni läbiviimine jääb esitajale; kava: `demo-guide.md`.
 - CSV/Jira eksport, jagatav kliendilink, story map ja kõnesisend on vabatahtlikud lisad.
