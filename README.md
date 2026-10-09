@@ -67,6 +67,8 @@ Käivita kontrollid: `npm test`. Need kontrollivad transpordi valideerimist ja i
 
 ## Esituse materjalid
 
+- #321 arendusplaan, muudetav arhitektuuriskeem ja kaitsmise harjutused: [docs/321/README.md](docs/321/README.md). See materjal on eraldi #318 rakenduse demonstratsioonist.
+
 - Kasutusstsenaarium: `docs/scenario.md`
 - Arendustöö backlog ja MVP põhjendus: `docs/development-backlog.md`
 - Korduskontroll: `outputs/assignment-audit.md`
