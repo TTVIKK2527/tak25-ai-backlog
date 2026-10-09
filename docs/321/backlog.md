@@ -30,4 +30,18 @@ Kui aega jääb poole vähem, säilivad 01-03 ja kontrollid; AI prototüüp liig
 
 ## Tööde haldamise keskkond
 
-Kavandatud keskkond on olemasoleva repositooriumi GitHub Issues: iga PLAN-ID eraldi töö, prioriteet ja olek kirje tekstis, sõltuvused viidetena. Tegelikud kirjed ja nende lingid lisatakse pärast lubatud loomist. Praegune tabel üksi ei täida töövahendis näitamise nõuet.
+Keskkond on olemasoleva repositooriumi [GitHub Issues](https://github.com/TTVIKK2527/tak25-ai-backlog/issues?q=is%3Aissue+%5B321%5D). 9. oktoobril 2026 loodi ja kontrolliti 11 avatud kavandatud tööd. Iga kirje sisaldab kasutajalugu, vastuvõtukriteeriume, prioriteeti, olekut ja sõltuvuste PLAN-ID-sid. Avatud kirje ei tähenda lõpetatud arendust.
+
+| Plaan | Tegelik töökirje |
+|---|---|
+| PLAN-01 | [#1](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/1) |
+| PLAN-02 | [#2](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/2) |
+| PLAN-03 | [#3](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/3) |
+| PLAN-04 | [#4](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/4) |
+| PLAN-05 | [#5](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/5) |
+| PLAN-06 | [#6](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/6) |
+| PLAN-07 | [#7](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/7) |
+| PLAN-08 | [#8](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/8) |
+| PLAN-09 | [#9](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/9) |
+| PLAN-10 | [#10](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/10) |
+| PLAN-11 | [#11](https://github.com/TTVIKK2527/tak25-ai-backlog/issues/11) |

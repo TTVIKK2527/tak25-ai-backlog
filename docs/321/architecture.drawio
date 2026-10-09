@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram id="architecture321" name="Kihiline monoliit">
-    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" page="1" pageWidth="1100" pageHeight="850">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" page="1" pageWidth="1350" pageHeight="850">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -8,14 +8,14 @@
         <mxCell id="api" value="Node.js API: sisendi valideerimine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="350" y="70" width="250" height="60" as="geometry"/></mxCell>
         <mxCell id="logic" value="Projekti ja backlogi loogika" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="350" y="210" width="250" height="60" as="geometry"/></mxCell>
         <mxCell id="store" value="Andmehoidla adapter / JSON fail" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="60" y="370" width="250" height="60" as="geometry"/></mxCell>
-        <mxCell id="adapter" value="AI adapter: skeemi kontroll" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="650" y="210" width="250" height="60" as="geometry"/></mxCell>
-        <mxCell id="groq" value="Groq: valine AI teenus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1"><mxGeometry x="650" y="370" width="250" height="60" as="geometry"/></mxCell>
+        <mxCell id="adapter" value="AI adapter: skeemi kontroll" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="850" y="210" width="250" height="60" as="geometry"/></mxCell>
+        <mxCell id="groq" value="Groq: väline AI teenus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1"><mxGeometry x="850" y="370" width="250" height="60" as="geometry"/></mxCell>
         <mxCell id="note" value="Kavandatud vastutused; praegu API ja loogika server.js-is. SQL-hoidla ning mobiiliklient on tulevased muudatused." style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="60" y="500" width="840" height="60" as="geometry"/></mxCell>
         <mxCell id="e1" value="HTTP JSON / vastus" style="endArrow=block;startArrow=block;" edge="1" parent="1" source="browser" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
         <mxCell id="e2" value="Valideeritud tegevus / tulemus" style="endArrow=block;startArrow=block;" edge="1" parent="1" source="api" target="logic"><mxGeometry relative="1" as="geometry"/></mxCell>
         <mxCell id="e3" value="Lugemine ja salvestamine" style="endArrow=block;startArrow=block;" edge="1" parent="1" source="logic" target="store"><mxGeometry relative="1" as="geometry"/></mxCell>
         <mxCell id="e4" value="Projekt / kontrollitud ettepanek" style="endArrow=block;startArrow=block;" edge="1" parent="1" source="logic" target="adapter"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="e5" value="HTTPS; voti serveris" style="endArrow=block;startArrow=block;" edge="1" parent="1" source="adapter" target="groq"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="HTTPS; võti serveris" style="endArrow=block;startArrow=block;" edge="1" parent="1" source="adapter" target="groq"><mxGeometry relative="1" as="geometry"/></mxCell>
       </root>
     </mxGraphModel>
   </diagram>

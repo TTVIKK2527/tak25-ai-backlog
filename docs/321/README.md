@@ -18,4 +18,4 @@ See on olemasoleva projekti eraldi kavandamise materjal. Olemasolev kood ei tõe
 
 ## Kontrollitavad piirangud
 
-Kohalik diagrammi lähtefail ja dokumendid ei tõenda veel vahendi tegelikku kasutamist: diagramm tuleb diagrams.net-is avada ning muuta. Tööde haldamise keskkonnas tuleb näidata tegelikke töid, mitte ainult Markdown-tabelit. Nende tegevuste tõend ja avaldatud lingid lisatakse pärast päris kontrolli. Kaitsmise sooritamist ega õpetaja vastuvõtmist ei väideta ette.
+9. oktoobril 2026 avati diagrammi XML diagrams.net-i lähteeditoris, rakendati skeem ning kontrolliti kuut komponenti ja viit ühendust. Seejärel muudeti paigutust ja kahte silti ning kontrolliti tulemust uuesti. [11 tegelikku avatud töökirjet](backlog.md#tööde-haldamise-keskkond) on GitHubis kontrollitud. Materjalidel on viis sisulist eraldi koostamiskommiti ja hilisem kontrolliparandus. Need on materjali koostamise tõendid, mitte õpilase individuaalse oskuse tõendid. Kaitsmise sooritamist ega õpetaja vastuvõtmist ei väideta ette.

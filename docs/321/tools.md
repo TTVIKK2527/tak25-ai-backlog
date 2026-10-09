@@ -22,7 +22,7 @@ Valin diagrams.net-i, sest kaitsmisel peab saama väikest arhitektuuriskeemi kii
 - Luua PLAN-01 kuni PLAN-11 tegelikud töökirjed lubatud repositooriumis; kontrollida prioriteete ja sõltuvusi.
 - Kontrollida, et õpetaja saab avada dokumendid, skeemi lähtefaili ja tööde keskkonna.
 
-Need sammud on kontrollnimekiri, mitte väide juba toimunud vahendikasutusest. Avaldatud tõend lisatakse pärast tegevusi.
+9. oktoobril 2026 kasutati diagrams.net-i XML-lähteeditorit: skeem rakendati, ühenduste sildid kontrolliti ning AI adapter ja väline teenus nihutati paremale, et ühenduse tekst kastidega ei kattuks. Parandatud lähtefail on samas kaustas. GitHubis loodi kõik 11 kavandatud töökirjet ja kontrolliti nende avatud olekut; [lingid](backlog.md#tööde-haldamise-keskkond) on lisatud. Proovimuudatuse tagasivõtmist ja õpilase iseseisvat vahendikasutust kaitsmisel ei väideta tehtuks.
 
 ## Ametlikud allikad
 
