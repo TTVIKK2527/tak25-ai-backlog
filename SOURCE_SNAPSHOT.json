@@ -1,0 +1,130 @@
+{
+  "repository": "TTVIKK2527/tak25-ai-backlog",
+  "commit": "44f89b30f2033789a7033e351781bf8bd4405c60",
+  "files": [
+    {
+      "path": ".env.example",
+      "githubBlob": "d394e2597ba99e483f356366812feb6926bf9073"
+    },
+    {
+      "path": ".gitignore",
+      "githubBlob": "2c77f1f4eed9b7a481f68e96885b6ccacbe53740"
+    },
+    {
+      "path": "README.md",
+      "githubBlob": "799b9a1ddc1f8a460c8d1b077036665712bcc3a0"
+    },
+    {
+      "path": "ai.js",
+      "githubBlob": "7cbd898473a14cc3eb5f647f55e93d1c2bed9396"
+    },
+    {
+      "path": "docs/321/README.md",
+      "githubBlob": "5af8205cee319c5c46cd8ab3f7082b628eed0401"
+    },
+    {
+      "path": "docs/321/architecture.drawio",
+      "githubBlob": "da1d3249fed5b3f557f0cb23b8101ecedc225007"
+    },
+    {
+      "path": "docs/321/architecture.md",
+      "githubBlob": "32a239cf7c92d0399f68bdea4825c0f653d225db"
+    },
+    {
+      "path": "docs/321/backlog.md",
+      "githubBlob": "7b316ad656aa6eb5fc0f4dc4f96ea195fe1e7624"
+    },
+    {
+      "path": "docs/321/defense.md",
+      "githubBlob": "22633f5d9f600d7bd55c13c4ba4e8bc48270ffbc"
+    },
+    {
+      "path": "docs/321/process.md",
+      "githubBlob": "1cfa0ee0aa94615622e977e3693eef9aec78e33d"
+    },
+    {
+      "path": "docs/321/tools.md",
+      "githubBlob": "9e61dc96eb85e7a923304cc29acf538a536cfc84"
+    },
+    {
+      "path": "docs/321/versioning.md",
+      "githubBlob": "4386a42a3dc39c6cdcde6cb9cdc34cd2693aef1f"
+    },
+    {
+      "path": "docs/development-backlog.md",
+      "githubBlob": "5dd0165608d5a8280e3af8345f0d9e92381fb2fd"
+    },
+    {
+      "path": "docs/scenario.md",
+      "githubBlob": "115ad9cd9f98b20c15ec03ba4d8c7600239cb6bc"
+    },
+    {
+      "path": "outputs/arendustoo-backlog.md",
+      "githubBlob": "5dd0165608d5a8280e3af8345f0d9e92381fb2fd"
+    },
+    {
+      "path": "outputs/assignment-audit.md",
+      "githubBlob": "4caa01fe265ae03b15741d5a4c74d6faf28c77c3"
+    },
+    {
+      "path": "outputs/demo-guide.md",
+      "githubBlob": "e00a9d1dbe106d3a2d53144daeae7ec46b8ad4b9"
+    },
+    {
+      "path": "outputs/grooming-verification.md",
+      "githubBlob": "ef235584a20024a812e99a3cadd6c340a104c8ea"
+    },
+    {
+      "path": "outputs/kasutusstsenaarium.md",
+      "githubBlob": "115ad9cd9f98b20c15ec03ba4d8c7600239cb6bc"
+    },
+    {
+      "path": "outputs/live-verification.md",
+      "githubBlob": "585e29e66a4b28121ec9a0a34db4c440669378b3"
+    },
+    {
+      "path": "package.json",
+      "githubBlob": "606d27c1c53396ee3a7620b86bb18606ddf75328"
+    },
+    {
+      "path": "public/app.js",
+      "githubBlob": "d272511d8f89f32805ab74797b5d7f17780a6478"
+    },
+    {
+      "path": "public/domain.js",
+      "githubBlob": "e59a19edc8bb0e11b7a63d947aa07f6e57ef0ff5"
+    },
+    {
+      "path": "public/index.html",
+      "githubBlob": "cc4c3d4ef2ac792efe3b35320f00fdca95fee991"
+    },
+    {
+      "path": "public/styles.css",
+      "githubBlob": "cf93026ac0366194e118dd4d8ef4f909738de961"
+    },
+    {
+      "path": "scripts/grooming-check.js",
+      "githubBlob": "b98be887fdd04e4740eea16875739393a593d02b"
+    },
+    {
+      "path": "scripts/live-check.js",
+      "githubBlob": "c631a712bacca3d54d8ce4298e1bef2ef3e5d3b3"
+    },
+    {
+      "path": "server.js",
+      "githubBlob": "7b9a3e30697c497827ddab2ca99e5e6cf4d2dab9"
+    },
+    {
+      "path": "test/ai.test.js",
+      "githubBlob": "e39d0cfbde2c88a49de82f41479c7a0b3a364eb6"
+    },
+    {
+      "path": "test/domain.test.js",
+      "githubBlob": "7fff52e52e4b82bed329928df52f062d68f3f8a1"
+    },
+    {
+      "path": "test/server.test.js",
+      "githubBlob": "91dd52cbd60bd335c2fa0603d793ba7e0b0a3019"
+    }
+  ]
+}

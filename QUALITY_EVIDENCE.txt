@@ -1,0 +1,44 @@
+Executed 2026-11-12; isolated snapshot; no live AI key used.
+
+> tak25-ai-backlog@1.0.0 test
+> node --test
+
+✔ selected answers and manually edited backlog are sent to the real API transport (7.021136ms)
+✔ invalid output retries then reports failure (1.993508ms)
+✔ repeated confirmed role questions are rejected and retried (1.489635ms)
+✔ missing key does not use a fake fallback (0.382365ms)
+✔ quota errors are understandable and not retried immediately (2.190833ms)
+✔ rejects design without criterion-to-mockup agreement (1.919442ms)
+✔ conditional commas are valid; subjective words and joined conditions warn (2.336445ms)
+✔ readiness parses title rather than trusting stale stored parts (0.97346ms)
+✔ manual workflow works without AI, previews require confirmation, undo and restart preserve state (518.972163ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 648.517896
+
+Exit: 0
+
+SYNTAX CHECKS
+Executed 2026-11-12; Node 25.8.0
+ai.js : 0
+
+public/app.js : 0
+
+public/domain.js : 0
+
+scripts/grooming-check.js : 0
+
+scripts/live-check.js : 0
+
+server.js : 0
+
+test/ai.test.js : 0
+
+test/domain.test.js : 0
+
+test/server.test.js : 0
